@@ -1,56 +1,31 @@
-# Node Exercise Repo
+Description
 
-## Getting Started
+Objective
+Create your own API that queries a database and returns information depending on the data requested
 
-This project is configured with babel so that you can use ES6 Module syntax. It's also bootstrapped for you with extra basic development tools so to get started, be sure to install all dependencies with `npm install`.
-
-## Running the Development Server
-
-To run the development server, use `npm run dev`.
-
-This will re-transpile and restart the server with babel and nodemon.
-
-## Running the Server
-
-To run the server outside of development, use `npm start`.
-
-This will transpile the server code with babel and start the server with node.
-
-## Project Structure
-
-This project is bootstrapped with files to get started, files for configuration and files for mock database queries. You will only be working in `server.js`, `routes/`, and `config/`.
-
-```txt
-config/
-    index.js
-mockdb/
-routes/
-    index.js
-.babelrc
-.env.template
-.gitignore
-package-lock.json
-server.js
-```
-
-## Config
-
-The `config/` folder is used to load and export node environment variables. Currently, it uses the `dotenv` package to load the environment variables when you start the server process, and exports them under `mysql` and `port`.
-
-`port` will be used to set the express server to listen on the specified port number.
-
-`mysql` will be used later to set up a connection to a MySQL database.
-
-### .env File
-
-There is a `.env.template` file in the root directory. You will need to create a local `.env` file and copy the contents of the `.env.template` file in to `.env`. Be sure to change the `PORT` value to `PORT=5000`. The `DB_` values will be changed in a later lesson.
-
-## MockDB
-
-The `mockdb/` folder contains a mock service for interacting with user data.
-
-- The `getAll` method returns the data list
-- The `getOne` method takes in an user object id parameter and returns a single user data object
-- The `add` method takes in an user object parameter and adds it to the data list
-- The `update` method takes in an user id and object as parameters and updates one user object in the data list
-- The `delete` method takes in an user id parameter and removes one user object the data list
+Steps
+Create a new project folder
+Initialize npm in your project
+Create a new folder named “server”
+This is where you will initialize a new Express application, create your api endpoints, and query your database
+Create a new folder named “db”
+This is where you will create your query model and query functions to be used in your application
+You will need to create a database with tables in MySQL Workbench to store your data
+You can use dummy data with the help of
+Mockaroo
+(could potentially be a funny api), or real information about something you like
+At a minimum, your api should start with GET, POST, PUT, and DELETE endpoints for a specific set of data (characters, topics, categories, prices, etc)
+GET returns a list of characters
+POST inserts a new character to the database
+PUT updates an existing character in the database
+DELETE removes an existing character from the database
+Have a table in your database that stores information about each request
+Create a GET endpoint for viewing the requests made to your server
+Make sure to account for errors with try/catch blocks
+Create a catch all middleware that acts as a custom error handler for your application
+Be sure to account for 404 not found responses
+Extra
+Now that you’re on your way to creating your very own api, you should write documentation for others to use it too!
+Practice your markdown skills to create your very own API documentation
+You can either write your own or use something like
+Swagger

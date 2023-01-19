@@ -2,14 +2,14 @@ import query from "../db/utils";
 
 const findAll = async () => {
   return await query(
-    "SELECT EmployeeID, FirstName, LastName, EmailAddress, Title FROM employees"
+    "SELECT id, first_name, last_name, EmailAddress FROM employees"
   );
 };
 
-const findOne = async (EmployeeID) => {
+const findOne = async (employeeID) => {
   return await query(
-    "SELECT EmployeeID, FirstName, LastName, EmailAddress, Title FROM employees WHERE EmployeeID = ?",
-    [EmployeeID]
+    "SELECT id, first_name, last_name, EmailAddress FROM employees WHERE id = ?",
+    [employeeID]
   );
 };
 
@@ -18,14 +18,14 @@ const addOne = async (newEmployee) => {
 };
 
 const updateOne = async (updatedEmployee) => {
-  return await query("UPDATE employees SET ? WHERE EmployeeID = ?", [
+  return await query("UPDATE employees SET ? WHERE id = ?", [
     updatedEmployee,
-    EmployeeID,
+    id,
   ]);
 };
 
 const removeOne = async (EmployeeID) => {
-  return await query("DELETE FROM employees WHERE EmployeeID = ?", [
+  return await query("DELETE FROM employees WHERE id = ?", [
     EmployeeID,
   ]);
 };
